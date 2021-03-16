@@ -1,7 +1,16 @@
 /*dit is de oplossing*/
+
 :root {
     --menu-bar-width: 60px;
     --menu-bar-height: 10px;
+}
+
+.container{
+    padding: 0;
+    /*border: solid 1px yellow;*/
+    height: 50px;
+    margin: 100px;
+    width: 60px;
 }
 
 #menu {
@@ -9,7 +18,8 @@
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 150px;
+    top: 20px;
+    transition: all 0.4s ease-in-out;
 }
 
 #menu::before,
@@ -20,21 +30,44 @@
     background-color: #D84282;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
+    transition: all 0.2s ease-in-out;
 }
 
 #menu::before {
     top: -20px;
     left: 0;
+    transform: rotate(0deg);
 }
 
 #menu::after {
     bottom: -20px;
     left: 0;
+    transform: rotate(0deg);
 }
 
+/*balkje boven*/
+.container:hover #menu::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.container:hover #menu::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+.container:hover #menu {
+    background-color: transparent ;
+    transform-origin: top right;
+}
 /*div {
     transition:;
 }*/
+
+/*menu: hover
+1e en tweede balkje kruizen
+twee zijdig dus in de
+container toevoegen is dus klasse*/
 
 
 
