@@ -1,73 +1,68 @@
-/*dit is de oplossing*/
-
 :root {
-    --menu-bar-width: 60px;
-    --menu-bar-height: 10px;
+    --main-bg-color: #D84282;
+    --menu-bar-width: 80px;
+    --menu-bar-heigth: 10px ;
 }
 
-.container{
-    padding: 0;
-    /*border: solid 1px yellow;*/
+.container {
+    display: block;
+    border: solid 1px  yellow;
+    width: var(--menu-bar-width);
     height: 50px;
     margin: 100px;
-    width: 60px;
+    padding: 0;
+    transition: 0.2s;
 }
 
 #menu {
-    background-color: #D84282;
-    position: relative;
+    background-color: var(--main-bg-color);
     width: var(--menu-bar-width);
-    height: var(--menu-bar-height);
+    height: var(--menu-bar-heigth);
+    position: relative;
+    display: block;
     top: 20px;
-    transition: all 0.4s ease-in-out;
+    transition: 0s;
 }
 
 #menu::before,
 #menu::after {
-    content: "";
-    display: block;
-    position: absolute;
-    background-color: #D84282;
+    background-color: var(--main-bg-color);
     width: var(--menu-bar-width);
-    height: var(--menu-bar-height);
-    transition: all 0.2s ease-in-out;
+    height: var(--menu-bar-heigth);
+    position: absolute;
+    content: "";
+    transition: 0.4s ease-in;
 }
 
 #menu::before {
     top: -20px;
-    left: 0;
+    left: 0px;
     transform: rotate(0deg);
 }
 
 #menu::after {
-    bottom: -20px;
     left: 0;
+    bottom: -20px;
     transform: rotate(0deg);
 }
 
-/*balkje boven*/
+.container:hover #menu {
+    background-color: transparent;
+    transition: 0.4s;
+}
+
 .container:hover #menu::before {
+    transition: ease-in 0.3s;
     transform: rotate(45deg);
     top: 0;
 }
 
 .container:hover #menu::after {
+    transition: ease-in 0.3s;
     transform: rotate(-45deg);
     bottom: 0;
 }
 
-.container:hover #menu {
-    background-color: transparent ;
-    transform-origin: top right;
-}
-/*div {
-    transition:;
-}*/
-
-/*menu: hover
-1e en tweede balkje kruizen
-twee zijdig dus in de
-container toevoegen is dus klasse*/
 
 
 
